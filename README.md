@@ -100,4 +100,17 @@ The 'target note' for -38 is 99, for number 10 its 'target node' is zero, for nu
 
 You can see in this example that in stack 'b' 0 is also smaller than 42 but 25 is the closest smaller to 42 so it's the number that is closest to 42.
 
-- -38: 1 -> now the push cost for -38 is 1 why, because it's 'target node'
+- -38: 1 -> now the push cost for -38 is 1 why, because it's 'target node' is 99 and it only takes one operation to bring 99 to top of the stack and which is reverse rotate 'b'
+
+- 10: 1 -> te push cost for 10 is only one because we can simultaneously rotate 'a' and 'b' at the same time to bring 10 and zero to the top of the stacks
+
+- 7: 3 -> the push for seven is three
+- 42: 1 -> the push for 42 is one because we only need to reverse rotate 'a' to take 42 to the top
+
+As you can see, we haven't found a push cost that is cheaper than -38 so we will go ahead and do the operations and push -38
+
+(añadir img 5)
+
+*Sort Three:*
+
+We now have three nodes left in stack 'a' and in this case we will implement an algorithm that sorts a stack of three nodes in ascending order and it's pretty simple, we just need to make sure that the biggest number is on the bottom and if we need to we just simply swap the first two nodes
