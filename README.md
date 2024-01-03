@@ -114,3 +114,45 @@ As you can see, we haven't found a push cost that is cheaper than -38 so we will
 *Sort Three:*
 
 We now have three nodes left in stack 'a' and in this case we will implement an algorithm that sorts a stack of three nodes in ascending order and it's pretty simple, we just need to make sure that the biggest number is on the bottom and if we need to we just simply swap the first two nodes
+
+(añadir img 6)
+
+Now we will push every 'b' node one by one fromp the top of the stack until 'b' is empty. The only requirement fot this step is that before we push 'b' node to stack 'a' we need to make sure it will be pushed on the top of the correct 'a' node. Recall our program needs to sort stack 'a' in ascending order, so this means that for every 'b' node it needs a 'target node' in stack 'a' that has the closest bigger value to 'b' node.
+If 'b' node can't find its closest bigger value let's say because it already is the largest number then you guessed it.
+Its 'target node' will be the smallest number in stack 'a'.
+Let's have a look at the first 'b' node and set its 'target node'. We are lucky that 
+
+....
+
+
+### Summary:
+- If stack 'a' > 3:
+    - Push 'a' node to stack 'b' twice
+- Until stack 'a' = 3
+    - Push 'a' node to stack 'b', sorting 'b' in descending order
+- Sort three
+- Push all 'b' nodes back to stack 'a'
+- Complete with smallest number on top
+
+### Pseudo Code
+- Declare pointers to two data structures/linked lists, one for stack 'a' and another for 'b'
+    - Set both pointers to NULL to avoid undefined and indicate we're starting with empty stack
+- Handle input count errors. Argument count must be 2 or more, and the second input must not ne empty
+    - If input errosr, return error
+- Handle both cases of input, whether a variable number of command line arguments, or as a string 
+    - If the input of number is as a string, call 'split()' to split the substrings
+- Initializa stack 'a' by appending each input number as a node to stack 'a'
+    - Handle integer overflow, duplicates, and syntax errors, e.g. input must only contain digits, or '-' '+' signs
+        - If errors found, free stack 'a' and return error
+    - Check for each input, if it is a long integer
+        - If the input is a string, convert it to a long integer
+    - Append the nodes to stack 'a'
+- Check if stack 'a' is sorted
+    - If not sorted, implemen our sorting algorithm
+        - If so, simply swap the numbers
+    - Check for three numbers
+        - If so, implement our simle 'sort three' algorithm
+    - Check if the stack has more than 3 numbers
+        - If so, implement our Turk Algorithm
+- Clean up the stack
+    
