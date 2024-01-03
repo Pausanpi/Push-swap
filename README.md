@@ -82,10 +82,7 @@ Note: the lesser instruction, the more evaluation points
   
 <pre>
         x operations to bring 'a' on top
-  
       + x operations to bring 'a' -> target node on top
-  
       ___________________________________________________
-  
       = push cost
 </pre>
