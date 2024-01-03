@@ -9,13 +9,7 @@ Return 'n' size of instructions fors sorting 'x' number of values:
 
 Note: the lesser instruction, the more evaluation points
 
-### Project plan:
-- Create the stacks
-- Implement swap, rotate, reverse rotate, push
-- Choose a sort algorithm
-- Pseudo code
-- Implement the algorith
-- Test with a checker
+## TUTORIAL
 
 ### What is a stack?
 - A stack of objects piled on top of each other
@@ -57,4 +51,25 @@ Note: the lesser instruction, the more evaluation points
     - rb: moves all elements of stack 'a' up by 1. The first element becomes the last element of stack 'b'
     - rr: ra and rb at the same time
 - reverse rotate:
+    - rra: the other way around than ra
+    - rrb: the other way around than rb
+    - rrr: rra and rrb at the same time
 - push:
+    - pa: takes the first element on top of stack 'b' and places it on top of 'a'
+    - pb: takes the first element on top of stack 'a' and places it on top of 'b'
+
+### Choosing our sort algorithm
+- The Turk Algorithm - A. Yigit Ogun.
+
+### The Turk Algorithm
+- Until there are 3 nodes left in stack 'a':
+    - Push all nodes from stack 'a' to stack 'b'
+    - During each push, 'b' is sorted in descending order
+
+- Push the first two 'a' nodes. We now have in stack 'b' a biggest number so far and the smallest number so far, this is important to push the rest of our 'a' nodes. For example, we had a stack of four nodes. We would then only push the first 'a' node to stack 'b' because after this our three left in stack 'a' condition is met
+- After pushing the first two 'a' nodes to stack 'b' we now look for target nodes
+
+### Target nodes:
+- Every 'a' node needs a 'target node' from stack 'b'
+- A target nodes is the 'closest smaller' number to the 'a' node
+- <u>If no 'closest samller' number is found</u>, then the target node is the 'max' value
