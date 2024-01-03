@@ -88,7 +88,16 @@ Note: the lesser instruction, the more evaluation points
 </pre>
 
 Current configuration:
-    - 25: 0 -> our push cost for 25 is zero because it's already on the top and its 'target node' which is zero is also already on the top. Since the cost of 25 is zero we won't need to calculate the rest of the nodes push cost. The way this analysis work is once we have the first node push cost, which in this case is zero, we need to find something cheaper, but since you can't get any cheaper than zero and even if there's another node whose push cost is zero, we will go with the first one by default. 
+- 25: 0 -> our push cost for 25 is zero because it's already on the top and its 'target node' which is zero is also already on the top. Since the cost of 25 is zero we won't need to calculate the rest of the nodes push cost. The way this analysis work is once we have the first node push cost, which in this case is zero, we need to find something cheaper, but since you can't get any cheaper than zero and even if there's another node whose push cost is zero, we will go with the first one by default. 
 
 (añadir img 3)
 
+After pushing 25 to stack B we now need to calculate again for each 'a' node it's 'target note' then cheapest 'a' node to push, recall as long as our stack 'a' has more than three nodes, we will keep doing this until there are only three left in 'a'.
+
+The 'target note' for -38 is 99, for number 10 its 'target node' is zero, for number 7 is also zero and for 42 its 'target node' is 25
+
+(añadir img 4)
+
+You can see in this example that in stack 'b' 0 is also smaller than 42 but 25 is the closest smaller to 42 so it's the number that is closest to 42.
+
+- -38: 1 -> now the push cost for -38 is 1 why, because it's 'target node'
