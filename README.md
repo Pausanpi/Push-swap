@@ -46,3 +46,15 @@ Note: the lesser instruction, the more evaluation points
         - *next node
         - *prev node
         - Otro que veremos más adelante
+
+### Operations:
+- swap:
+    - sa: swaps the first two elements at the top of the stack 'a'
+    - sb: swaps the first two elements at the top of the stack 'b'
+    - ss: swap the first two elements on top of stack 'a' and stack 'b' at the same time
+- rotate:
+    - ra: moves all elements of stack 'a' up by 1. The first element becomes the last element of stack 'a'
+    - rb: moves all elements of stack 'a' up by 1. The first element becomes the last element of stack 'b'
+    - rr: ra and rb at the same time
+- reverse rotate:
+- push:
