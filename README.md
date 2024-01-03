@@ -77,10 +77,15 @@ Note: the lesser instruction, the more evaluation points
 ### Cost analysis:
 - Find the 'cheapest' node to push
 - The formula:
-      Sum:
+  
+  Sum:
+  
       `
         x operations to bring 'a' on top
+  
       + x operations to bring 'a' -> target node on top
+  
       ___________________________________________________
+  
       = push cost
-  `
+      `
