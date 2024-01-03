@@ -156,3 +156,9 @@ Let's have a look at the first 'b' node and set its 'target node'. We are lucky 
         - If so, implement our Turk Algorithm
 - Clean up the stack
     
+### Basic utils:
+- Functions to handle errors
+- Operations
+- Stack length
+- Last node
+- Min and max nodes
