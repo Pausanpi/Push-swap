@@ -73,3 +73,14 @@ Note: the lesser instruction, the more evaluation points
 - Every 'a' node needs a 'target node' from stack 'b'
 - A target nodes is the 'closest smaller' number to the 'a' node
 - _If no 'closest smaller' number is found_, then the target node is the 'max' value
+(añadir foto 
+### Cost analysis:
+- Find the 'cheapest' node to push
+- The formula:
+      Sum:
+      `
+        x operations to bring 'a' on top
+      + x operations to bring 'a' -> target node on top
+      ___________________________________________________
+      = push cost
+  `
