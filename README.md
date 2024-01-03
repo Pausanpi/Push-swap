@@ -72,4 +72,4 @@ Note: the lesser instruction, the more evaluation points
 ### Target nodes:
 - Every 'a' node needs a 'target node' from stack 'b'
 - A target nodes is the 'closest smaller' number to the 'a' node
-- <u>If no 'closest samller' number is found</u>, then the target node is the 'max' value
+- _If no 'closest smaller' number is found_, then the target node is the 'max' value
