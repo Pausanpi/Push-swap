@@ -32,4 +32,4 @@ Note: the lesser instruction, the more evaluation points
 - Doubly Linked list: bi-directional (for this project we will be using this)
 - Tail's *next -> NULL
 
-<img src="https://github.com/Pausanpi/Push-swap/blob/main/img%20readme/Captura%20de%20pantalla%202024-01-03%20124904.png?raw=true" alt="Linked list" width="200" height="300">
+<img align-items="center" src="https://github.com/Pausanpi/Push-swap/blob/main/img%20readme/Captura%20de%20pantalla%202024-01-03%20124904.png?raw=true" alt="Linked list" width="200" height="300">
