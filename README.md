@@ -34,3 +34,15 @@ Note: the lesser instruction, the more evaluation points
 <p aling="center">
 <img src="https://github.com/Pausanpi/Push-swap/blob/main/img%20readme/Captura%20de%20pantalla%202024-01-03%20124904.png?raw=true" width="200" height="300" />
 </p>
+
+### What is a node?
+- Like a box that stores data
+- Many different data types
+- Our nodes will contain:
+    - The Data:
+        - A value (type 'int')
+        - Its index (type 'int')
+    - Reference pointers:
+        - *next node
+        - *prev node
+        - Otro que veremos más adelante
