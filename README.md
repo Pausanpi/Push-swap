@@ -73,7 +73,7 @@ Note: the lesser instruction, the more evaluation points
 - Every 'a' node needs a 'target node' from stack 'b'
 - A target nodes is the 'closest smaller' number to the 'a' node
 - _If no 'closest smaller' number is found_, then the target node is the 'max' value
-(añadir foto 
+(añadir img 2)
 ### Cost analysis:
 - Find the 'cheapest' node to push
 - The formula:
@@ -86,3 +86,9 @@ Note: the lesser instruction, the more evaluation points
       ___________________________________________________
       = push cost
 </pre>
+
+Current configuration:
+    - 25: 0 -> our push cost for 25 is zero because it's already on the top and its 'target node' which is zero is also already on the top. Since the cost of 25 is zero we won't need to calculate the rest of the nodes push cost. The way this analysis work is once we have the first node push cost, which in this case is zero, we need to find something cheaper, but since you can't get any cheaper than zero and even if there's another node whose push cost is zero, we will go with the first one by default. 
+
+(añadir img 3)
+
