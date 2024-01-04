@@ -1,4 +1,4 @@
-# Push Swap
+# Push_swap
 
 [Tutorial](https://youtu.be/wRvipSG4Mmk)
 
