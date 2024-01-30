@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 12:48:36 by pausanch          #+#    #+#             */
+/*   Updated: 2024/01/10 12:51:09 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static long	ft_atol(const char *s)
 {
 	long	result;
 	int		sign;
-	
+
 	result = 0;
 	sign = 1;
 	while (*s == ' ' || *s == '\t' || *s == '\n' || \
@@ -21,14 +33,14 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
-static void append_node(t_stack **stack, int n)
+static void	append_node(t_stack **stack, int n)
 {
-	t_stack	node;
+	t_stack	*node;
 	t_stack	*last_node;
-	
+
 	if (!stack)
 		return ;
-	node = mallox(sizeof(t_stack));
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return ;
 	node->next = NULL;
@@ -50,13 +62,13 @@ void	init_stack_a(t_stack **a, char **argv)
 {
 	long	n;
 	int		i;
-	
+
 	i = 0;
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
 			free_errors(a);
-		n = ft_atoi(argv[i]);
+		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		if (error_duplicate(*a, (int)n))
@@ -99,7 +111,3 @@ void	prep_for_push(t_stack **stack, t_stack *top_node, char name)
 		}
 	}
 }
-
-
-
-

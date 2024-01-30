@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 15:45:19 by pausanch          #+#    #+#             */
+/*   Updated: 2024/01/10 15:45:24 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	push(t_stack **dst, t_stack **src)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!*src)
 		return ;
 	tmp = (*src)->next;

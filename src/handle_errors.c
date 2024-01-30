@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 12:33:23 by pausanch          #+#    #+#             */
+/*   Updated: 2024/01/10 12:33:25 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 int	error_syntax(char *str)
@@ -8,7 +20,7 @@ int	error_syntax(char *str)
 		return (1);
 	while (*++str)
 	{
-		if (!(*Str >= '0' && *str <= '9'))
+		if (!(*str >= '0' && *str <= '9'))
 			return (1);
 	}
 	return (0);
@@ -31,7 +43,7 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*current;
-	
+
 	if (!stack)
 		return ;
 	current = *stack;

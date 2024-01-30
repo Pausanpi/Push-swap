@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/25 16:59:47 by pausanch          #+#    #+#             */
+/*   Updated: 2024/01/25 16:59:49 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	rev_rotate(t_stack **stack)
 {
 	t_stack	*last;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	last = find_last(*stack);
