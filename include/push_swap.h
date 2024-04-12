@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 12:37:52 by pausanch          #+#    #+#             */
+/*   Updated: 2024/04/12 16:33:13 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -7,59 +19,76 @@
 
 typedef struct s_stack
 {
-	int		value;
-	int		index;
-	int		cost;
-	bool	above_median;
-	bool	cheapest;
-	struct s_stack *target_node;
-	struct s_stack *next;
-	struct s_stack *prev;
+	int				value;
+	int				index;
+	int				pos;
+	int				target;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
 }	t_stack;
 
-//Handle errors
-int		error_syntax(char *str);
-int		error_duplicate(t_stack *a, int n);
-void	free_stack(t_stack **stack);
-void	free_errors(t_stack **a);
-
-//Stack initiation
-void	init_stack_a(t_stack **a, char **argv);
-//char	**split...
-
-//Nodes initiation
-void	init_nodes_a(t_stack *a, t_stack *b);
-void	init_nodes_b(t_stack *a, t_stack *b);
-void 	current_index(t_stack *stack);
-void	set_cheapest(t_stack *stack);
-t_stack	*get_cheapest(t_stack *stack);
-void	prep_for_push(t_stack **stack, t_stack *top_node, char name);
-
-//Stack utils
-int		stack_len(t_stack *stack);
-t_stack *find_last(t_stack *stack);
-bool	stack_sorted(t_stack *stack);
-t_stack	*find_min(t_stack *stack);
-t_stack	*find_max(t_stack *stack);
-
 //Commands
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
+void	ft_swap(t_stack **stack);
+void	ft_sa(t_stack **a, bool p);
+void	ft_sb(t_stack **b, bool p);
+void	ft_ss(t_stack **a, t_stack **b, bool p);
 
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
+void	ft_rotate(t_stack **stack);
+void	ft_ra(t_stack **a, bool p);
+void	ft_rb(t_stack **b, bool p);
+void	ft_rr(t_stack **a, t_stack **b, bool p);
 
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	ft_rev_rotate(t_stack **stack);
+void	ft_rra(t_stack **a, bool p);
+void	ft_rrb(t_stack **b, bool p);
+void	ft_rrr(t_stack **a, t_stack **b, bool p);
 
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **b, t_stack **a);
+void	ft_push(t_stack **dst, t_stack **src);
+void	ft_pa(t_stack **a, t_stack **b, bool p);
+void	ft_pb(t_stack **b, t_stack **a, bool p);
 
 //Algorithms
-void	sort_three(t_stack **a);
-void	sort_stacks(t_stack **a, t_stack **b);
+void	ft_algo(t_stack **stack_a, t_stack **stack_b, int i);
+void	ft_rotate_a(t_stack **stack_a, int *cost_a);
+void	ft_rotate_b(t_stack **stack_b, int *cost_b);
+
+//Steps
+void	ft_first_step(t_stack **stack_a, t_stack **b);
+void	ft_second_step(t_stack **stack_a);
+void	ft_third_step(t_stack **stack_a, t_stack **stack_b);
+void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b);
+void	ft_last_step(t_stack **stack_a);
+
+//utils
+void	*ft_stacklast(t_stack *stack);
+int		ft_stacksize(t_stack *stack);
+void	ft_stackadd_last(t_stack **stack, t_stack *new);
+void	ft_free_str(char **str);
+bool	ft_correct_orden(t_stack **stack);
+
+//Position
+void	ft_put_position(t_stack **stack);
+void	ft_put_index(t_stack **stack);
+t_stack	*ft_max_index(t_stack **stack_a);
+t_stack	*ft_min_index(t_stack **stack_a);
+void	ft_calculate_target(t_stack *tmpa, t_stack *tmpb, int *rest);
+
+//Costs
+int		ft_check_par(int size);
+int		ft_abs_value(int values);
+t_stack	*ft_calculate_cheapest(t_stack **stack_b);
+void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b);
+
+//Input_checks
+bool	ft_check_duplicates(char **argv);
+bool	ft_check_correct_digits(char **argv);
+void	ft_check_condits(char *argv[]);
+
+//Main
+void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b);
+char	**ft_check_args(int ac, char **av);
+int		ft_transf_args(char *value_str, t_stack **stack);
+void	ft_free_stack(t_stack **stack);
 
 #endif
