@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:37:52 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 16:33:13 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:08:45 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stdbool.h>
-# include <limits.h> //para definir MIN y MAX
 # include "../libft/libft.h"
 
 typedef struct s_stack
@@ -75,20 +74,13 @@ t_stack	*ft_min_index(t_stack **stack_a);
 void	ft_calculate_target(t_stack *tmpa, t_stack *tmpb, int *rest);
 
 //Costs
-int		ft_check_par(int size);
-int		ft_abs_value(int values);
 t_stack	*ft_calculate_cheapest(t_stack **stack_b);
 void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b);
 
 //Input_checks
-bool	ft_check_duplicates(char **argv);
-bool	ft_check_correct_digits(char **argv);
 void	ft_check_condits(char *argv[]);
 
-//Main
-void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b);
-char	**ft_check_args(int ac, char **av);
-int		ft_transf_args(char *value_str, t_stack **stack);
-void	ft_free_stack(t_stack **stack);
+///////////////////////////////////////////
+//		BONUS
 
 #endif

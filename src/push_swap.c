@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:11:37 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 16:20:24 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:56:13 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Inicializa los stacks a nulos*/
 
-void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b)
+static void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b)
 {
 	*stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	if (!*stack_a)
@@ -33,7 +33,7 @@ void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b)
 	**stack_b = NULL;
 }
 
-char	**ft_check_args(int ac, char **av)
+static char	**ft_check_args(int ac, char **av)
 {
 	char	**str;
 
@@ -59,13 +59,13 @@ char	**ft_check_args(int ac, char **av)
 
 /*Pasa los argumentos que hemos pasado por teclado al stack a*/
 
-int	ft_transf_args(char *value_str, t_stack **stack)
+static int	ft_transf_args(char *value_str, t_stack **stack)
 {
 	int		value;
 	t_stack	*new_node;
 
 	value = ft_atoi(value_str);
-	new_node = (t_stack *)malloc(sizeof(sizeof(t_stack)));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (ft_printf("Error\n"), 0);
 	new_node->value = value;
@@ -79,20 +79,20 @@ int	ft_transf_args(char *value_str, t_stack **stack)
 	return (1);
 }
 
-void	ft_free_stack(t_stack **stack)
-{
-	t_stack	*node;
-	t_stack	*aux;
+// static void	ft_free_stack(t_stack **stack)
+// {
+// 	t_stack	*node;
+// 	t_stack	*aux;
 
-	node = *stack;
-	while (node)
-	{
-		aux = node->next;
-		free(node);
-		node = aux;
-	}
-	free(stack);
-}
+// 	node = *stack;
+// 	while (node)
+// 	{
+// 		aux = node->next;
+// 		free(node);
+// 		node = aux;
+// 	}
+// 	free(stack);
+// }
 
 int	main(int argc, char **argv)
 {
@@ -115,7 +115,7 @@ int	main(int argc, char **argv)
 	}
 	if (!ft_correct_orden(s_a))
 		ft_algo(s_a, s_b, i);
-	if (argc == 2)
-		ft_free_str(str);
-	return (ft_free_stack(s_a), ft_free_stack(s_b), 0);
+// 	if (argc == 2)
+// 		ft_free_str(str);
+// 	return (ft_free_stack(s_a), ft_free_stack(s_b), 0);
 }

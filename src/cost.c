@@ -6,13 +6,13 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:48:55 by pausanch          #+#    #+#             */
-/*   Updated: 2024/02/19 15:51:04 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:04:19 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_check_par(int size)
+static int	ft_check_par(int size)
 {
 	int	aux;
 
@@ -23,7 +23,7 @@ int	ft_check_par(int size)
 	return (aux);
 }
 
-int	ft_abs_value(int values)
+static int	ft_abs_value(int values)
 {
 	if (values < 0)
 		return (values * -1);

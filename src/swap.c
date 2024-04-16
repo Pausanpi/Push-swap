@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:45:22 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 17:59:50 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:51:54 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_sa(t_stack **a, bool p)
 {
 	ft_swap(a);
 	if (p)
-		ft_printf("\e[38;5;45msa\033[0m\n");
+		ft_printf("sa\n");
 }
 
 void	ft_sb(t_stack **b, bool p)
 {
 	ft_swap(b);
 	if (p)
-		ft_printf("\e[38;5;51msb\033[0m\n");
+		ft_printf("b\n");
 }
 
 void	ft_ss(t_stack **a, t_stack **b, bool p)
@@ -47,5 +47,5 @@ void	ft_ss(t_stack **a, t_stack **b, bool p)
 	ft_swap(a);
 	ft_swap(b);
 	if (p)
-		ft_printf("\e[38;5;14mss\033[0m\n");
+		ft_printf("ss\n");
 }

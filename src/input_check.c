@@ -6,13 +6,13 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:43:37 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 16:32:57 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:04:51 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-bool	ft_check_duplicates(char **argv)
+static bool	ft_check_duplicates(char **argv)
 {
 	char	**current;
 	char	**compare;
@@ -37,7 +37,7 @@ bool	ft_check_duplicates(char **argv)
 	return (true);
 }
 
-bool	ft_check_correct_digits(char **argv)
+static bool	ft_check_correct_digits(char **argv)
 {
 	int	i;
 	int	j;

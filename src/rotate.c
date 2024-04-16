@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:59:58 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 17:59:22 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:53:12 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void	ft_ra(t_stack **a, bool p)
 {
 	ft_rotate(a);
 	if (p)
-		ft_printf("\e[38;5;128mra\033[0m\n");
+		ft_printf("ra\n");
 }
 
 void	ft_rb(t_stack **b, bool p)
 {
 	ft_rotate(b);
 	if (p)
-		ft_printf("\e[38;5;135mrb\033[0m\n");
+		ft_printf("rb\n");
 }
 
 void	ft_rr(t_stack **a, t_stack **b, bool p)
@@ -51,5 +51,5 @@ void	ft_rr(t_stack **a, t_stack **b, bool p)
 	ft_rotate(a);
 	ft_rotate(b);
 	if (p)
-		ft_printf("\e[38;5;165mrr\033[0m\n");
+		ft_printf("rr\n");
 }

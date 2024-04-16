@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:16:13 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/12 17:49:50 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:04:48 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->index < size / 2)
 		{
-			ft_pb(stack_a, stack_b, 1);
+			ft_pb(stack_b, stack_a, 1);
 			push++;
 		}
 		else
@@ -34,7 +34,7 @@ void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (size - push > 3)
 	{
-		ft_pb(stack_a, stack_b, 1);
+		ft_pb(stack_b, stack_a, 1);
 		push++;
 	}
 }
