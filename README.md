@@ -4,7 +4,7 @@
 
 * 2 valores -> solo hace falta hacer un swap
 * 3 valores -> algoritmo de ordenación de tres números
-* > 3 valores -> algoritmo de ordenació para más de tres valores
+* >>3 valores -> algoritmo de ordenació para más de tres valores
 
 # Algoritmo para 3 números
 Para 3 valores, solo hay seis posibles casos:
