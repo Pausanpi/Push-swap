@@ -1,4 +1,4 @@
-### PUSH_SWAP
+# PUSH_SWAP
 
 ## Elegir el método de ordenación
 
@@ -6,7 +6,7 @@
 * 3 valores -> algoritmo de ordenación de tres números
 * Más de 3 valores -> algoritmo de ordenació para más de tres valores
 
-# Algoritmo para 3 números
+### Algoritmo para 3 números
 Para 3 valores, solo hay seis posibles casos:
 <pre>
   Caso      Acciones
