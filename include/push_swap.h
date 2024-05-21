@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:37:52 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/15 18:08:45 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/05/21 05:50:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	ft_check_condits(char *argv[]);
 
 ///////////////////////////////////////////
 //		BONUS
+int		ft_msg(t_stack **stack_a, t_stack **stack_b, char *order);
+int		ft_final_check(t_stack **s_a, t_stack **s_b);
 
 #endif
