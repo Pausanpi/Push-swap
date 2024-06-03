@@ -28,25 +28,23 @@ SRC =	algorithm.c\
 		swap.c\
 		utils.c\
 
-SRC_BONUS_DIR = src_bonus/
-SRC_BONUS = checker.c\
-			utils_bonus.c\
-			algorithm.c\
-			cost.c\
-			input_check.c\
-			position.c\
-			push.c\
-			rev_rotate.c\
-			rotate.c\
-			steps.c\
-			swap.c\
-			utils.c\
+SRC_BONUS = src_bonus/checker.c\
+			src_bonus/utils_bonus.c\
+			src/algorithm.c\
+			src/cost.c\
+			src/input_check.c\
+			src/position.c\
+			src/push.c\
+			src/rev_rotate.c\
+			src/rotate.c\
+			src/steps.c\
+			src/swap.c\
+			src/utils.c\
 		
 OBJ_DIR = src/
 OBJS = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
-OBJ_BONUS_DIR = src_bonus/
-OBJS_BONUS = $(addprefix $(OBJ_BONUS_DIR), $(SR_BONUS:.c=.o))
+OBJS_BONUS = $(SR_BONUS:.c=.o)
 
 LIBFT = ./libft/libft.a
 
