@@ -13,6 +13,7 @@
 NAME = push_swap
 NAME_BONUS = checker
 CFLAGS = -Wall -Werror -Wextra
+CC = cc
 RM = rm -f
 
 SRC_DIR = src/
