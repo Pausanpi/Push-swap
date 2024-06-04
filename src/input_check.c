@@ -16,7 +16,6 @@ static bool	ft_check_duplicates(char **argv)
 {
 	char	**current;
 	char	**compare;
-	int		i;
 
 	current = argv + 1;
 	while (*current != NULL)
@@ -24,11 +23,8 @@ static bool	ft_check_duplicates(char **argv)
 		compare = argv;
 		while (compare < current)
 		{
-			i = 0;
-			while ((*current)[i] != '\0' && (*compare)[i] != '\0'
-				&& (*current)[i] == (*compare)[i])
-				i++;
-			if ((*current)[i] == (*compare)[i])
+			if (ft_strncmp(*current, *compare, ft_strlen(*current) + 1) == 0)
+			)
 				return (false);
 			compare++;
 		}
