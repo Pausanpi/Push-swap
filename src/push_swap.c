@@ -50,11 +50,8 @@ static char	**ft_check_args(int ac, char **av)
 		ft_check_condits(str);
 		return (str);
 	}
-	else
-	{
-		ft_check_condits(av + 1);
-		return (av + 1);
-	}
+	ft_check_condits(av + 1);
+	return (av + 1);
 }
 
 /*Pasa los argumentos que hemos pasado por teclado al stack a*/
