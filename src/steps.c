@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   steps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:16:13 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/15 17:04:48 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/08/17 11:51:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
+void	ft_split_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 	int	i;
@@ -39,7 +39,7 @@ void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	ft_second_step(t_stack **stack_a)
+void	ft_sort_top3(t_stack **stack_a)
 {
 	t_stack	*first;
 	t_stack	*middle;
@@ -62,7 +62,7 @@ void	ft_second_step(t_stack **stack_a)
 		ft_sa(stack_a, 1);
 }
 
-void	ft_third_step(t_stack **stack_a, t_stack **stack_b)
+void	ft_set_targets(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*max_target;
 	t_stack	*tmpa;
@@ -83,7 +83,7 @@ void	ft_third_step(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b)
+void	ft_move_best(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*cheapest;
 
@@ -105,7 +105,7 @@ void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b)
 	ft_pa(stack_a, stack_b, 1);
 }
 
-void	ft_last_step(t_stack **stack_a)
+void	ft_align_a(t_stack **stack_a)
 {
 	int	first;
 	int	size;

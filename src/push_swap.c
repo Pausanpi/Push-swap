@@ -111,7 +111,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	if (!ft_correct_orden(s_a))
-		ft_algo(s_a, s_b, i);
+		ft_sort_control(s_a, s_b, i);
  	if (argc == 2)
  		ft_free_str(str);
  	return (ft_free_stack(s_a), ft_free_stack(s_b), 0);

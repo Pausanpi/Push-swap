@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:37:52 by pausanch          #+#    #+#             */
-/*   Updated: 2024/05/21 05:50:03 by marvin           ###   ########.fr       */
+/*   Updated: 2024/08/17 11:53:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ void	ft_pa(t_stack **a, t_stack **b, bool p);
 void	ft_pb(t_stack **b, t_stack **a, bool p);
 
 //Algorithms
-void	ft_algo(t_stack **stack_a, t_stack **stack_b, int i);
+void	ft_sort_control(t_stack **stack_a, t_stack **stack_b, int i);
 void	ft_rotate_a(t_stack **stack_a, int *cost_a);
 void	ft_rotate_b(t_stack **stack_b, int *cost_b);
 
 //Steps
-void	ft_first_step(t_stack **stack_a, t_stack **b);
-void	ft_second_step(t_stack **stack_a);
-void	ft_third_step(t_stack **stack_a, t_stack **stack_b);
-void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b);
-void	ft_last_step(t_stack **stack_a);
+void	ft_split_a(t_stack **stack_a, t_stack **b);
+void	ft_sort_top3(t_stack **stack_a);
+void	ft_set_targets(t_stack **stack_a, t_stack **stack_b);
+void	ft_move_best(t_stack **stack_a, t_stack **stack_b);
+void	ft_align_a(t_stack **stack_a);
 
 //utils
 void	*ft_stacklast(t_stack *stack);
