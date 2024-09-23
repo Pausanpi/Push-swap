@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/19 12:36:55 by pausanch          #+#    #+#             */
+/*   Updated: 2024/09/19 12:36:55 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 int	ft_msg(t_stack **stack_a, t_stack **stack_b, char *order)
@@ -27,10 +39,25 @@ int	ft_msg(t_stack **stack_a, t_stack **stack_b, char *order)
 	return (ft_printf("Error\n"), EXIT_FAILURE);
 }
 
-int ft_final_check(t_stack **s_a, t_stack **s_b)
+void	ft_final_check(t_stack **s_a, t_stack **s_b)
 {
 	if (ft_correct_orden(s_a) && *s_b == NULL)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+}
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*node;
+	t_stack	*aux;
+
+	node = *stack;
+	while (node)
+	{
+		aux = node->next;
+		free(node);
+		node = aux;
+	}
+	free(stack);
 }

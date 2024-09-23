@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:11:37 by pausanch          #+#    #+#             */
-/*   Updated: 2024/05/21 05:41:43 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/23 11:32:15 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,19 @@ static int	ft_transf_args(char *value_str, t_stack **stack)
 	return (1);
 }
 
-static void	ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*node;
- 	t_stack	*aux;
+	t_stack	*aux;
 
- 	node = *stack;
- 	while (node)
- 	{
- 		aux = node->next;
- 		free(node);
- 		node = aux;
- 	}
- 	free(stack);
+	node = *stack;
+	while (node)
+	{
+		aux = node->next;
+		free(node);
+		node = aux;
+	}
+	free(stack);
 }
 
 int	main(int argc, char **argv)
@@ -112,7 +112,7 @@ int	main(int argc, char **argv)
 	}
 	if (!ft_correct_orden(s_a))
 		ft_sort_control(s_a, s_b, i);
- 	if (argc == 2)
- 		ft_free_str(str);
- 	return (ft_free_stack(s_a), ft_free_stack(s_b), 0);
+	if (argc == 2)
+		ft_free_str(str);
+	return (ft_free_stack(s_a), ft_free_stack(s_b), 0);
 }

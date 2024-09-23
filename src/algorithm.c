@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:04:30 by pausanch          #+#    #+#             */
-/*   Updated: 2024/08/17 11:52:50 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/23 10:45:39 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_sort_control(t_stack **stack_a, t_stack **stack_b, int i)
 {
-	if (i == 2){
+	if (i == 2)
 		ft_sa(stack_a, 1);
-	}
 	if (i == 3)
 		ft_sort_top3(stack_a);
 	if (i > 3)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:37:52 by pausanch          #+#    #+#             */
-/*   Updated: 2024/08/17 11:53:37 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/23 11:32:48 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,12 @@ void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b);
 //Input_checks
 void	ft_check_condits(char *argv[]);
 
+//Main
+void	ft_free_stack(t_stack **stack);
+
 ///////////////////////////////////////////
 //		BONUS
 int		ft_msg(t_stack **stack_a, t_stack **stack_b, char *order);
-int		ft_final_check(t_stack **s_a, t_stack **s_b);
+void	ft_final_check(t_stack **s_a, t_stack **s_b);
 
 #endif

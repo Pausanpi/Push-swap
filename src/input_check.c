@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:43:37 by pausanch          #+#    #+#             */
-/*   Updated: 2024/04/15 18:04:51 by pausanch         ###   ########.fr       */
+/*   Updated: 2024/09/19 11:04:15 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static bool	ft_check_duplicates(char **argv)
 		while (compare < current)
 		{
 			if (ft_strncmp(*current, *compare, ft_strlen(*current) + 1) == 0)
-			)
 				return (false);
 			compare++;
 		}
@@ -54,7 +53,7 @@ static bool	ft_check_correct_digits(char **argv)
 				return (false);
 			j++;
 		}
-		if (ft_atoi(argv[i]) < -2147483648 || ft_atoi(argv[i]) > 2147483647)
+		if (ft_atoi(argv[i]) <= -2147483648 || ft_atoi(argv[i]) > 2147483647)
 			return (false);
 		i++;
 	}

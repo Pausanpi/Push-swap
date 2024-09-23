@@ -3,17 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 12:20:18 by pausanch          #+#    #+#              #
-#    Updated: 2024/05/21 05:56:48 by marvin           ###   ########.fr        #
+#    Updated: 2024/09/23 12:10:04 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 NAME_BONUS = checker
 CFLAGS = -Wall -Werror -Wextra
-CC = cc
+DATE = $(shell /usr/bin/date)
+CC = clang
 RM = rm -f
 
 SRC_DIR = src/
@@ -45,7 +46,7 @@ SRC_BONUS = src_bonus/checker.c\
 OBJ_DIR = src/
 OBJS = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
-OBJS_BONUS = $(SR_BONUS:.c=.o)
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 LIBFT = ./libft/libft.a
 
@@ -54,17 +55,17 @@ all: $(LIBFT) $(NAME)
 bonus: $(LIBFT) $(NAME_BONUS)
 
 $(NAME): $(OBJS) $(LIBFT)
-	@gcc $(OBJS) $(LIBFT) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(NAME_BONUS): $(OBJS_BONUS) $(LIBFT)
-	@gcc $(OBJS_BONUS) $(LIBFT) -o $(NAME_BONUS)
+	@$(CC) $(OBJS_BONUS) $(LIBFT) -o $(NAME_BONUS)
 
 $(LIBFT):
 	@make -C ./libft
 
 .c.o:
 #	@cc $(CFLAGS) -c $< -o $(<:.c=.o)
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compilando: $(notdir $<)\n"
 
 clean:
 	@rm -rf $(OBJS) $(OBJS_BONUS) $(LIBFT)
@@ -77,5 +78,10 @@ fclean: clean
 	@rm -rf $(NAME) $(NAME_BONUS)
 
 re: fclean all
+
+git:
+	git add .
+	git commit -m "Daily sync $(DATE)"
+	git push origin main
 
 .PHONY: clean fclean re all bonus libclean .c.o

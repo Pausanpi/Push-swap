@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   steps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:16:13 by pausanch          #+#    #+#             */
-/*   Updated: 2024/08/17 11:51:38 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/19 11:05:08 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ void	ft_sort_top3(t_stack **stack_a)
 	if (first->value > middle->value && first->value > last->value)
 	{
 		ft_ra(stack_a, 1);
-		ft_second_step(stack_a);
+		ft_sort_top3(stack_a);
 	}
 	if (first->value < middle->value && middle->value > last->value)
 	{
 		ft_rra(stack_a, 1);
-		ft_second_step(stack_a);
+		ft_sort_top3(stack_a);
 	}
 	if (first->value > middle->value && first->value < last->value)
 		ft_sa(stack_a, 1);

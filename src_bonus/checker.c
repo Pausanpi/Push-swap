@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/19 12:36:40 by pausanch          #+#    #+#             */
+/*   Updated: 2024/09/19 12:36:40 by pausanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	ft_init_stacks(t_stack ***stack_a, t_stack ***stack_b)
@@ -63,22 +75,7 @@ static int	ft_transf_args(char *value_str, t_stack **stack)
 	return (1);
 }
 
-static void	ft_free_stack(t_stack **stack)
-{
-	t_stack	*node;
- 	t_stack	*aux;
-
- 	node = *stack;
- 	while (node)
- 	{
- 		aux = node->next;
- 		free(node);
- 		node = aux;
- 	}
- 	free(stack);
-}
-
-static ft_checker(t_stack **s_a, t_stack **s_b)
+static void	ft_checker(t_stack **s_a, t_stack **s_b)
 {
 	char	*line;
 
@@ -96,10 +93,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	**s_a;
 	t_stack	**s_b;
-	char **str;
+	char	**str;
 	int		i;
 
-	ft_init_program(&s_a, &s_b);
+	ft_init_stacks(&s_a, &s_b);
 	str = ft_check_args(argc, argv);
 	i = 0;
 	while (str[i])
@@ -118,5 +115,4 @@ int	main(int argc, char **argv)
 	ft_free_stack(s_a);
 	ft_free_stack(s_b);
 	return (0);
-	
 }
