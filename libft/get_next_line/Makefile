@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 10:42:23 by pausanch          #+#    #+#              #
-#    Updated: 2023/11/02 10:43:57 by pausanch         ###   ########.fr        #
+#    Updated: 2024/09/23 12:53:25 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ CFLAGS = -Wall -Werror -Wextra
 
 all:	$(OBJ)
 
-.c.o:	$(SOURCE)
-	@gcc $(CFLAGS) -c $(SOURCE)
+.c.o:
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 clean:
 	@rm -f $(OBJ)

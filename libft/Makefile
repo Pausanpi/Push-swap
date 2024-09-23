@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 16:42:06 by pausanch          #+#    #+#              #
-#    Updated: 2024/09/23 12:03:06 by pausanch         ###   ########.fr        #
+#    Updated: 2024/09/23 12:53:07 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,8 @@ LIB = ar rcs
 all: $(NAME)
 
 ####################################
-.c.o: $(SOURCE) $(SOURCE_BONUS)
-	@clang $(CFLAGS) -c $(SOURCE) $(SOURCE_BONUS)
+.c.o: 
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 ####################################
 	
 #$(NAME): $(OBJ)

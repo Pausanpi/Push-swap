@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 12:20:18 by pausanch          #+#    #+#              #
-#    Updated: 2024/09/23 12:10:04 by pausanch         ###   ########.fr        #
+#    Updated: 2024/09/23 12:52:52 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(NAME_BONUS): $(OBJS_BONUS) $(LIBFT)
 	@$(CC) $(OBJS_BONUS) $(LIBFT) -o $(NAME_BONUS)
 
 $(LIBFT):
-	@make -C ./libft
+	@make -s -C ./libft
 
 .c.o:
 #	@cc $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -69,10 +69,10 @@ $(LIBFT):
 
 clean:
 	@rm -rf $(OBJS) $(OBJS_BONUS) $(LIBFT)
-	@make -C ./libft clean
+	@make -s -C ./libft clean
 
 libclean:
-	@make -C ./libft fclean
+	@make -s -C ./libft fclean
 
 fclean: clean
 	@rm -rf $(NAME) $(NAME_BONUS)
